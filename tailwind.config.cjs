@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				rubik: ["Rubik", "sans-serif"],
+				"open-sans": ["Open Sans", "sans-serif"],
+			},
+			colors: {
+				grey: "#1f2023",
+				primary: "#56e39f",
+				secondary: "#ff5e5b",
+			},
+		},
 	},
-	plugins: []
+	plugins: [],
 };

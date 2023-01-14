@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+	@apply font-rubik bg-grey text-white text-center;
+}
+
+body {
+	@apply h-screen;
+}
