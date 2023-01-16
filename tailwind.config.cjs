@@ -5,7 +5,6 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				rubik: ["Rubik", "sans-serif"],
-				"open-sans": ["Open Sans", "sans-serif"],
 			},
 			colors: {
 				grey: "#1f2023",

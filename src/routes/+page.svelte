@@ -8,6 +8,7 @@
 	<h2 class="text-4xl">So we built our own.</h2>
 	<br />
 	<h1 class="text-8xl">Welcome to Glance</h1>
+	<br />
 	<Button btnText="Login with Google" />
 	<!-- TODO Delete app link before release -->
 	<h3><a href="/app">App</a></h3>
