@@ -38,10 +38,10 @@
 	function onDelete() {
 		todos = todos.filter((todo) => todo.isDone === false);
 	}
-	/*onMount(async () => {
+	onMount(async () => {
 		let id = 14;
 		while (true) {
-			await delay(1);
+			await delay(200);
 			todos.push({
 				id,
 				title: `item${id}`,
@@ -50,7 +50,7 @@
 			todos = todos;
 			id++;
 		}
-	});*/
+	});
 	function delay(ms: number) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
@@ -64,7 +64,9 @@
 	<h1 class="font-bold mb-4 text-4xl leading-none">Your Todos</h1>
 	<div class="create-todo create-top" />
 
-	<section class="custom-height w-[800px] m-auto border-2 border-red-500 overflow-y-scroll">
+	<section
+		class="custom-scrollbar mt-4 custom-height w-[800px] m-auto border-2 border-red-500 overflow-y-auto"
+	>
 		<div class="w-full">
 			{#each todos as todo (todo.id)}
 				<TodoComponent data={todo} />
@@ -78,13 +80,26 @@
 	<p>{todo.name}</p>
 {/each} -->
 	<div />
-	<div class="h-fit-content">
+	<div class="absolute bottom-4 left-1/2 -translate-x-1/2 h-fit-content">
 		<Button click={onDelete} btnText="Delete Done" isGreen={false} />
 	</div>
 </div>
 
 <style>
 	.custom-height {
-		max-height: calc(100vh - 288px);
+		max-height: calc(100vh - 32px - 144px - 64px);
+	}
+	.custom-scrollbar {
+		scrollbar-color: #ff5e5b #56e39f;
+		scrollbar-width: thin;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar {
+		background-color: #56e39f;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background-color: #ff5e5b;
+		width: 5px;
+		height: 3px;
 	}
 </style>
